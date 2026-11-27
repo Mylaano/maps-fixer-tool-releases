@@ -118,6 +118,20 @@ Include your application version, Windows version, the steps to reproduce the is
 
 Please remove personal information from screenshots and **do not post passwords, login codes, API keys or paid mapping files** in public issues.
 
+## Credits & acknowledgements
+
+Maps Fixer Tool builds on the work of these projects and their contributors:
+
+- **[CodeWalker](https://github.com/dexyfex/CodeWalker)** — Created by **dexyfex**. Powers the integrated GTA V 3D preview and collision-file support through a separate local installation.
+- **[HeroUI](https://www.heroui.com/)** — Provides the UI styling and design system, customised for Maps Fixer Tool’s light and dark themes.
+- **[Electron](https://www.electronjs.org/)** — Provides the desktop application framework.
+- **[Tailwind CSS](https://tailwindcss.com/)** — Used to build the interface styles.
+- **[SharpDX](https://github.com/sharpdx/SharpDX)** — Provides the DirectX bindings used by the CodeWalker integration.
+
+Thank you to the authors, maintainers and contributors behind these projects.
+
+Third-party projects retain their respective copyrights and licensing terms. Their inclusion in these credits does not imply endorsement of Maps Fixer Tool.
+
 ---
 
 <p align="center">
