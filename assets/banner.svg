@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img" aria-labelledby="title desc">
+<title id="title">Maps Fixer Tool</title><desc id="desc">Inspect. Compare. Fix. Props, occlusions and collisions for FiveM.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1019"/><stop offset="1" stop-color="#162943"/></linearGradient>
+<linearGradient id="accent" x2="1" y2="1"><stop stop-color="#377ef5"/><stop offset="1" stop-color="#29b9c1"/></linearGradient>
+<pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><path d="M44 0H0V44" fill="none" stroke="#77a6e9" stroke-opacity=".09"/></pattern>
+</defs>
+<rect width="1280" height="340" rx="24" fill="url(#bg)"/>
+<rect width="1280" height="340" rx="24" fill="url(#grid)"/>
+<circle cx="1120" cy="75" r="180" fill="#377ef5" opacity=".055"/>
+<circle cx="1090" cy="310" r="155" fill="#29b9c1" opacity=".045"/>
+<rect x="58" y="64" width="60" height="60" rx="16" fill="url(#accent)"/>
+<path d="m79 77 24 9-7 26-24-9z" fill="none" stroke="#0b1727" stroke-width="5" stroke-linejoin="round"/>
+<text x="58" y="180" fill="#f0f5ff" font-family="Segoe UI,Arial,sans-serif" font-size="62" font-weight="700" letter-spacing="-2">Maps Fixer Tool</text>
+<text x="61" y="226" fill="#aec2df" font-family="Segoe UI,Arial,sans-serif" font-size="24">Inspect. Compare. Fix.</text>
+<rect x="60" y="261" width="79" height="29" rx="8" fill="#233c5e"/>
+<text x="99" y="281" fill="#a9ccff" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">PROPS</text>
+<rect x="149" y="261" width="114" height="29" rx="8" fill="#233c5e"/>
+<text x="206" y="281" fill="#a9ccff" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">OCCLUSIONS</text>
+<rect x="273" y="261" width="112" height="29" rx="8" fill="#153f49"/>
+<text x="329" y="281" fill="#83ded7" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">COLLISIONS</text>
+<g stroke-linejoin="round" stroke-width="2">
+<path d="m874 126 105-55 108 54-107 58z" fill="#377ef5" fill-opacity=".25" stroke="#609cff"/>
+<path d="m874 126 106 57v113l-106-57z" fill="#377ef5" fill-opacity=".1" stroke="#609cff"/>
+<path d="m980 183 107-58v114l-107 57z" fill="#29b9c1" fill-opacity=".14" stroke="#56c9d3"/>
+<path d="m1003 90 83-44 85 44-84 45z" fill="#29b9c1" fill-opacity=".18" stroke="#67d6d9"/>
+<path d="m1087 135 84-45v90l-84 45z" fill="#29b9c1" fill-opacity=".08" stroke="#67d6d9"/>
+<path d="m1003 90 84 45v90l-84-45z" fill="#29b9c1" fill-opacity=".08" stroke="#67d6d9"/>
+</g>
+<path d="M0 337H1280" stroke="url(#accent)" stroke-width="5"/>
+</svg>
