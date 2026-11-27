@@ -1,0 +1,35 @@
+name: Update release presentation
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - .github/workflows/release-presentation.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  presentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update latest release description
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="$(gh release view --json tagName --jq .tagName)"
+          mkdir -p .release
+          gh release download "$tag" --pattern update.json --dir .release
+          RELEASE_TAG="$tag" node <<'NODE'
+          const fs = require('node:fs');
+          const manifest = JSON.parse(fs.readFileSync('.release/update.json', 'utf8'));
+          const tag = process.env.RELEASE_TAG;
+          if (tag !== 'v' + manifest.version || !Array.isArray(manifest.notes?.en)) throw Error('Release manifest mismatch');
+          const changelog = '## What’s new in ' + tag + '\n\n' + manifest.notes.en.map(note => '- ' + note).join('\n');
+          const readme = fs.readFileSync('README.md', 'utf8');
+          fs.writeFileSync('.release/description.md', readme + '\n\n---\n\n' + changelog + '\n');
+          NODE
+          gh release edit "$tag" --notes-file .release/description.md
