@@ -29,7 +29,11 @@ jobs:
           const tag = process.env.RELEASE_TAG;
           if (tag !== 'v' + manifest.version || !Array.isArray(manifest.notes?.en)) throw Error('Release manifest mismatch');
           const changelog = '## What’s new in ' + tag + '\n\n' + manifest.notes.en.map(note => '- ' + note).join('\n');
-          const readme = fs.readFileSync('README.md', 'utf8');
+          const download = 'https://github.com/' + process.env.GH_REPO + '/releases/download/' + tag + '/MapsFixerTool-' + manifest.version + '-portable.exe';
+          const readme = fs.readFileSync('README.md', 'utf8').replace(
+            /href="https:\/\/github.com\/Mylaano\/maps-fixer-tool-releases\/releases\/latest"><strong>↓ Download for Windows/,
+            'href="' + download + '"><strong>↓ Download for Windows'
+          );
           fs.writeFileSync('.release/description.md', readme + '\n\n---\n\n' + changelog + '\n');
           NODE
           gh release edit "$tag" --notes-file .release/description.md
